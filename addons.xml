@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<addons>
+  <addon id="plugin.video.discoplus" name="DiscoPlus" version="1.0.1" provider-name="ElSupremo">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0" />
+      <import addon="script.module.beautifulsoup" version="3.2.1" />
+      <import addon="script.module.simple.downloader" version="0.9.4" />
+      <import addon="script.module.requests" />
+      <import addon="script.module.httplib2" />
+      <import addon="script.module.liveresolver" version="0.1.24" optional="true" />
+      <import addon="script.module.youtube.dl" optional="true" />
+      <import addon="plugin.video.youtube" optional="true" />
+      <import addon="script.module.dateutil" optional="true" />
+      <import addon="script.module.resolveurl" optional="true" />
+      <import addon="script.module.urlresolver" optional="true" />
+      <import addon="script.module.inputstreamhelper" optional="true" />
+      <import addon="script.module.simplejson" />
+      <import addon="script.module.livestreamer" optional="true" />
+      <import addon="script.module.slproxy" optional="true" />
+      <import addon="script.module.pyamf" optional="true" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>MedPlay</summary>
+      <description>
+        Various Stream from Discovery Plus
+    </description>
+      <platform>all</platform>
+    </extension>
+  </addon>
+  <addon id="plugin.video.elsupremostream" name="ElSupremoStream" version="1.0.1" provider-name="ElSupremo">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0" />
+      <import addon="script.module.beautifulsoup" version="3.2.1" />
+      <import addon="script.module.simple.downloader" version="0.9.4" />
+      <import addon="script.module.requests" />
+      <import addon="script.module.httplib2" />
+      <import addon="script.module.liveresolver" version="0.1.24" optional="true" />
+      <import addon="script.module.youtube.dl" optional="true" />
+      <import addon="plugin.video.youtube" optional="true" />
+      <import addon="script.module.dateutil" optional="true" />
+      <import addon="script.module.resolveurl" optional="true" />
+      <import addon="script.module.urlresolver" optional="true" />
+      <import addon="script.module.inputstreamhelper" optional="true" />
+      <import addon="script.module.simplejson" />
+      <import addon="script.module.livestreamer" optional="true" />
+      <import addon="script.module.slproxy" optional="true" />
+      <import addon="script.module.pyamf" optional="true" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>ElSupremoStreams</summary>
+      <description>
+        Various Stream from Web
+    </description>
+      <platform>all</platform>
+    </extension>
+  </addon>
+  <addon id="plugin.video.f4mTester" version="3.0.1.1" name="f4mTester" provider-name="Shani">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0" />
+      <import addon="script.video.F4mProxy" version="3.0.1.1" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>f4mTester</summary>
+      <description></description>
+      <platform>all</platform>
+    </extension>
+  </addon>
+  <addon id="plugin.video.mandrakodi19" version="1.0.0" name="MandraKodi Matrix" provider-name="ElSupremo">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.requests" version="2.22.0" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="main.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">MandraKodi (Matrix version)</summary>
+      <description lang="en_GB">Free sport for Kodi mediacenter.</description>
+      <disclaimer lang="en_GB">This addon is a multimedia content collector via a scraping system</disclaimer>
+      <summary lang="it">MandraKodi (Matrix version)</summary>
+      <description lang="it_IT">Free sport for Kodi mediacenter.</description>
+      <disclaimer lang="it_IT">Questo addon e' un raccoglitore di contenuti multimediali tramite sistema di scraping</disclaimer>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        <screenshot>resources\screenshot-01.jpg</screenshot>
+        <screenshot>resources\screenshot-02.jpg</screenshot>
+        <screenshot>resources\screenshot-03.jpg</screenshot>
+      </assets>
+      <news>First Relase... DAJE!!!</news>
+    </extension>
+  </addon>
+  <addon id="plugin.video.medplay" name="MedPlay" version="1.0.1" provider-name="ElSupremo">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0" />
+      <import addon="script.module.beautifulsoup" version="3.2.1" />
+      <import addon="script.module.simple.downloader" version="0.9.4" />
+      <import addon="script.module.requests" />
+      <import addon="script.module.httplib2" />
+      <import addon="script.module.liveresolver" version="0.1.24" optional="true" />
+      <import addon="script.module.youtube.dl" optional="true" />
+      <import addon="plugin.video.youtube" optional="true" />
+      <import addon="script.module.dateutil" optional="true" />
+      <import addon="script.module.resolveurl" optional="true" />
+      <import addon="script.module.urlresolver" optional="true" />
+      <import addon="script.module.inputstreamhelper" optional="true" />
+      <import addon="script.module.simplejson" />
+      <import addon="script.module.livestreamer" optional="true" />
+      <import addon="script.module.slproxy" optional="true" />
+      <import addon="script.module.pyamf" optional="true" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>MedPlay</summary>
+      <description>
+        Various Stream from Mediaset Play
+    </description>
+      <platform>all</platform>
+    </extension>
+  </addon>
+  <addon id="plugin.video.wltvhelper" name="World Live TV Helper" version="0.0.7" provider-name="KLTV Group">
+    <requires>
+      <import addon="script.module.requests" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="kodi.context.item">
+      <menu id="kodi.core.main">
+        <item library="switch.py">
+          <label>[B]Seleziona Lista[/B]</label>
+          <visible>!String.IsEmpty(ListItem.ChannelName)</visible>
+        </item>
+      </menu>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <platform>all</platform>
+      <summary lang="en">World Live TV Helper - for free IPTV channel</summary>
+      <assets>
+        <icon>resources/logo.png</icon>
+        <fanart>resources/background.png</fanart>
+        <screenshot>resources/background.png</screenshot>
+        <screenshot>resources/background.png</screenshot>
+        <screenshot>resources/background.png</screenshot>
+      </assets>
+      <news></news>
+      <description lang="it"></description>
+      <disclaimer></disclaimer>
+      <platform>all</platform>
+      <license>GNU GPL v3</license>
+      <forum>https://t.me/kodilivetv</forum>
+      <website>https://KodiLiveTV.github.io/</website>
+      <source></source>
+    </extension>
+  </addon>
+  <addon id="repository.crack75" name="CrAcK75 Addon Repository" version="1.0.0" provider-name="CrAcK75">
+    <extension point="xbmc.addon.repository" name="CrAcK75 Addon Repository">
+      <dir>
+        <info compressed="false">https://CrAcK75.github.io/addons.xml</info>
+        <checksum>https://CrAcK75.github.io/addons.xml.md5</checksum>
+        <datadir zip="true">https://CrAcK75.github.io/</datadir>
+        <hashes>true</hashes>
+      </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>CrAcK75 Addon Repository</summary>
+      <description>My Personal Kodi Addon Repository, another unofficial repo for Kodi.</description>
+      <disclaimer>I do not make all the add-ons in this repository and I'm not responsible for their content.</disclaimer>
+      <platform>all</platform>
+      <forum></forum>
+      <telegram></telegram>
+      <website></website>
+    </extension>
+  </addon>
+  <addon id="repository.kltv" name="KodiLiveTV Addon Repository" version="1.0.0" provider-name="KLTV">
+    <extension point="xbmc.addon.repository" name="KodiLiveTV Addon Repository">
+      <dir>
+        <info compressed="false">https://KodiLiveTV.github.io/repo/addons.xml</info>
+        <checksum>https://KodiLiveTV.github.io/repo/addons.xml.md5</checksum>
+        <datadir zip="true">https://KodiLiveTV.github.io/repo/</datadir>
+        <hashes>true</hashes>
+      </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary>KodiLiveTV Repository</summary>
+      <description>The official repo of KodiLiveTV.</description>
+      <disclaimer>KodiLiveTV did not make all the add-ons in this repository and is not responsible for their content.</disclaimer>
+      <platform>all</platform>
+      <forum>https://t.me/kodilivetv</forum>
+      <telegram>https://t.me/kodilivetv</telegram>
+      <website>https://KodiLiveTV.github.io/</website>
+    </extension>
+  </addon>
+  <addon id="script.module.youtube.dl" name="youtube-dl Control" version="21.124.1" provider-name="Rick Phillips (Upd. ElSupremo)">
+    <requires>
+      <import addon="xbmc.python" version="2.26.0" />
+      <import addon="script.module.addon.signals" version="0.0.1" />
+      <import addon="script.module.kodi-six" version="0.0.4" />
+    </requires>
+    <extension point="xbmc.python.script" library="control.py">
+      <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+      <platform>all</platform>
+      <summary lang="en_GB">Module providing access to youtube-dl video stream extraction</summary>
+      <description lang="en_GB">Module providing access to youtube-dl video stream extraction for hundreds of sites. Version is based on youtube-dl date version: YY.MDD.V where V is the addon specific sub-version. Also provides downloading with the option for background downloading with a queue and queue manager.</description>
+      <summary lang="el_EL">Βοηθητική μονάδα πρόσβασης στους επιλυτές youtube-dl για την εξαγωγή ροών βίντεο</summary>
+      <description lang="el_EL">Βοηθητική μονάδα πρόσβασης στους επιλυτές youtube-dl για την εξαγωγή ροών βίντεο από εκατοντάδες ιστότοπους. Η έκδοση βασίζεται στην έκδοση ημερομηνίας του youtube-dl: EE.MHH.EK όπου ΕΚ η υπό-έκδοση συγκεκριμένα για το πρόσθετο. Επιπλέον δίνει δυνατότητα μεταφόρτωσης στο παρασκήνιο με ουρά και διαχειριστή αυτής.</description>
+      <summary lang="es_ES">Módulo que proporciona acceso a YouTube-dl para la extracción de flujos de video</summary>
+      <description lang="es_ES">Módulo que proporciona acceso a YouTube-dl para la extracción de flujos de video de cientos de sitios. La versión está basada en la versión de fecha youtube-dl: YY.MDD.V donde V es la subversión específica del complemento. También permite descargas con la opción de descarga en segundo plano con una cola y un administrador de colas.</description>
+      <license>LGPL-2.1-only</license>
+      <forum>https://forum.kodi.tv/showthread.php?tid=200877</forum>
+      <source>https://github.com/ruuk/script.module.youtube.dl</source>
+      <assets>
+        <icon>icon.png</icon>
+      </assets>
+    </extension>
+  </addon>
+  <addon id="script.video.F4mProxy" name="F4mProxy" version="3.0.1.2" provider-name="Shani">
+    <requires>
+      <import addon="xbmc.python" version="2.1.0" />
+      <import addon="script.module.requests" />
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+      <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <platform>all</platform>
+      <summary lang="en">Proxy for f4m</summary>
+      <description lang="en">Use this addon to play F4m v1 and v2 streams</description>
+    </extension>
+  </addon>
+</addons>
