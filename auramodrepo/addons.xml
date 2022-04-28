@@ -241,21 +241,110 @@
         </news>
     </extension>
   </addon>
-  <addon id="script.module.thetvdb" name="The TVDB API v2" version="1.0.29" provider-name="marcelveldt and others">
+  <addon id="plugin.video.themoviedb.helper" version="4.5.66" name="TheMovieDb Helper" provider-name="jurialmunkey">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
       <import addon="script.module.requests" version="2.9.1" />
-      <import addon="script.module.simplejson" version="3.17.0" />
-      <import addon="script.module.simplecache" version="2.0.2" />
-      <import addon="script.module.arrow" version="0.15.5" />
+      <import addon="script.module.pil" version="1.1.7" />
     </requires>
-    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.python.pluginsource" library="plugin.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.python.script" library="script.py" />
+    <extension point="xbmc.service" library="service.py" />
+    <extension point="kodi.context.item">
+      <menu id="kodi.core.main">
+        <item library="context-playusing.py">
+          <label>$ADDON[plugin.video.themoviedb.helper 32322]</label>
+          <visible>!String.IsEmpty(ListItem.Property(tmdbhelper.context.playusing))</visible>
+        </item>
+        <item library="context-related.py">
+          <label>$ADDON[plugin.video.themoviedb.helper 32235]</label>
+          <visible>!String.IsEmpty(ListItem.Property(tmdbhelper.context.related))</visible>
+        </item>
+        <item library="context-addlibrary.py">
+          <label>$LOCALIZE[20444]</label>
+          <visible>!String.IsEmpty(ListItem.Property(tmdbhelper.context.addlibrary))</visible>
+        </item>
+        <item library="context-trakt.py">
+          <label>$ADDON[plugin.video.themoviedb.helper 32295]</label>
+          <visible>!String.IsEmpty(ListItem.Property(tmdbhelper.context.trakt))</visible>
+        </item>
+        <item library="context-refresh.py">
+          <label>$ADDON[plugin.video.themoviedb.helper 32233]</label>
+          <visible>!String.IsEmpty(ListItem.Property(tmdbhelper.context.refresh))</visible>
+        </item>
+        <item library="context-artwork.py">
+          <label>$ADDON[plugin.video.themoviedb.helper 32222]</label>
+          <visible>!String.IsEmpty(ListItem.Property(tmdbhelper.context.artwork))</visible>
+        </item>
+        <item library="context-sorting.py">
+          <label>$ADDON[plugin.video.themoviedb.helper 32309]</label>
+          <visible>!String.IsEmpty(ListItem.Property(tmdbhelper.context.sorting))</visible>
+        </item>
+      </menu>
+    </extension>
     <extension point="xbmc.addon.metadata">
-      <summary>TheTVDB API v2 python module for Kodi</summary>
-      <description>TheTVDB API v3 python module for Kodi</description>
-      <license>Apache 2.0</license>
-      <source>https://github.com/kodi-community-addons/script.module.thetvdb</source>
+      <summary lang="en_GB">TheMovieDb Helper - Now With Trakt Support!</summary>
+      <summary lang="es_ES">TheMovieDb Helper - ¡Ahora con soporte para Trakt!</summary>
+      <summary lang="fr_FR">TheMovieDb Helper - Maintenant avec support Trakt!</summary>
+      <description lang="en_GB">TheMovieDb Helper provides details about movies, tvshows and actors from TMDb. Users can access a variety of lists from TMDb and Trakt.</description>
+      <description lang="es_ES">TheMovieDb Helper proporciona detalles sobre películas, programas de televisión y actores de TMDb. Los usuarios pueden acceder a una variedad de listas desde TMDb y Trakt.</description>
+      <description lang="fr_FR">TheMovieDb Helper fournit des détails sur les films, les émissions de télévision et acteurs de TMDb. Les utilisateurs peuvent accéder à une variété de listes TMDb et Trakt.</description>
+      <disclaimer lang="en_GB">Provided by TheMovieDb and Trakt.</disclaimer>
+      <disclaimer lang="es_ES">Proporcionado por TheMovieDb y Trakt</disclaimer>
+      <disclaimer lang="fr_FR">Fourni par TheMovieDb et Trakt.</disclaimer>
+      <license>GPL-3.0-or-later</license>
+      <website>https://github.com/jurialmunkey/plugin.video.themoviedb.helper</website>
+      <forum>https://forum.kodi.tv/showthread.php?tid=345847</forum>
+      <assets>
+        <icon>icon.png</icon>
+        <fanart>fanart.jpg</fanart>
+        <screenshot>resources/screenshot-01.jpg</screenshot>
+        <screenshot>resources/screenshot-02.jpg</screenshot>
+      </assets>
+      <news>
+  - Improved PVR service matching
+  - Avoid unnecessary FanartTV re-requests
+  - Add In-Progress Episodes Trakt list
+  - Add Still to Watch Trakt list (In-Progress+Watchlist)
+  - Allow stacking of episodes from same show in calendar
+  - Fix collection matching and query encoding
+  - Better list filtering options
+  - Add cacheonly=true param for faster dialog widget loading
+  - Add script getter/setter functions for audio/subs in player
+  - Allow larger sync list items per page limits
+  - Fix plugincategory labels
+  - Fix randomised lists not refreshing
+  - Fix string formatter for update to Py3.7 in 19.3
+  - Fix fallback players when asserted value not available
+  - Allow both mark as watched/unwatched in Trakt options
+  - Update branding and icons
+  - Add temporary service pause for custom dialogs via Window.Property(TMDbHelper.ServicePause)
+  - Artwork monitor fixes
+</news>
+    </extension>
+  </addon>
+  <addon id="script.colorbox" name="colorbox Script" version="2.0.8" provider-name="BADMS, drinfernoo">
+    <requires>
+      <import addon="script.module.pil" />
+    </requires>
+    <extension point="xbmc.python.script" library="default.py">
+      <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Image manipulator and colour matching tools</summary>
+      <description lang="en_GB">Provides image tools for skinners</description>
       <platform>all</platform>
+      <license>GNU GENERAL PUBLIC LICENSE Version 2, June 1991</license>
+      <forum>http://forum.kodi.tv/</forum>
+      <source>https://github.com/BADMS/script.colorbox</source>
+      <email>philipkdick@gmail.com</email>
+      <assets>
+        <icon>resources/icon.png</icon>
+        <fanart>resources/fanart.jpg</fanart>
+        <screenshot>resources/fanart.jpg</screenshot>
+      </assets>
     </extension>
   </addon>
   <addon id="script.module.metadatautils" name="Metadata and Artwork module" version="1.0.46" provider-name="marcelveldt and others">
@@ -363,6 +452,23 @@ v1.0.25 (marcelveldt)
       <description>Kodi module library for the Python bindings for Musicbrainz' NGS webservice developed by alastair.</description>
       <license>GNU GENERAL PUBLIC LICENSE V3</license>
       <source>https://github.com/kodi-community-addons/script.module.musicbrainz</source>
+      <platform>all</platform>
+    </extension>
+  </addon>
+  <addon id="script.module.thetvdb" name="The TVDB API v2" version="1.0.29" provider-name="marcelveldt and others">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.requests" version="2.9.1" />
+      <import addon="script.module.simplejson" version="3.17.0" />
+      <import addon="script.module.simplecache" version="2.0.2" />
+      <import addon="script.module.arrow" version="0.15.5" />
+    </requires>
+    <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.addon.metadata">
+      <summary>TheTVDB API v2 python module for Kodi</summary>
+      <description>TheTVDB API v3 python module for Kodi</description>
+      <license>Apache 2.0</license>
+      <source>https://github.com/kodi-community-addons/script.module.thetvdb</source>
       <platform>all</platform>
     </extension>
   </addon>
@@ -522,112 +628,6 @@ Version 1.0.37
       <forum>http://forum.kodi.tv/showthread.php?tid=235676</forum>
       <website></website>
       <source>https://github.com/kodi-community-addons/script.skin.helper.widgets</source>
-    </extension>
-  </addon>
-  <addon id="script.colorbox" name="colorbox Script" version="2.0.8" provider-name="BADMS, drinfernoo">
-    <requires>
-      <import addon="script.module.pil" />
-    </requires>
-    <extension point="xbmc.python.script" library="default.py">
-      <provides>executable</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en_GB">Image manipulator and colour matching tools</summary>
-      <description lang="en_GB">Provides image tools for skinners</description>
-      <platform>all</platform>
-      <license>GNU GENERAL PUBLIC LICENSE Version 2, June 1991</license>
-      <forum>http://forum.kodi.tv/</forum>
-      <source>https://github.com/BADMS/script.colorbox</source>
-      <email>philipkdick@gmail.com</email>
-      <assets>
-        <icon>resources/icon.png</icon>
-        <fanart>resources/fanart.jpg</fanart>
-        <screenshot>resources/fanart.jpg</screenshot>
-      </assets>
-    </extension>
-  </addon>
-  <addon id="plugin.video.themoviedb.helper" version="4.5.66" name="TheMovieDb Helper" provider-name="jurialmunkey">
-    <requires>
-      <import addon="xbmc.python" version="3.0.0" />
-      <import addon="script.module.requests" version="2.9.1" />
-      <import addon="script.module.pil" version="1.1.7" />
-    </requires>
-    <extension point="xbmc.python.pluginsource" library="plugin.py">
-      <provides>video</provides>
-    </extension>
-    <extension point="xbmc.python.script" library="script.py" />
-    <extension point="xbmc.service" library="service.py" />
-    <extension point="kodi.context.item">
-      <menu id="kodi.core.main">
-        <item library="context-playusing.py">
-          <label>$ADDON[plugin.video.themoviedb.helper 32322]</label>
-          <visible>!String.IsEmpty(ListItem.Property(tmdbhelper.context.playusing))</visible>
-        </item>
-        <item library="context-related.py">
-          <label>$ADDON[plugin.video.themoviedb.helper 32235]</label>
-          <visible>!String.IsEmpty(ListItem.Property(tmdbhelper.context.related))</visible>
-        </item>
-        <item library="context-addlibrary.py">
-          <label>$LOCALIZE[20444]</label>
-          <visible>!String.IsEmpty(ListItem.Property(tmdbhelper.context.addlibrary))</visible>
-        </item>
-        <item library="context-trakt.py">
-          <label>$ADDON[plugin.video.themoviedb.helper 32295]</label>
-          <visible>!String.IsEmpty(ListItem.Property(tmdbhelper.context.trakt))</visible>
-        </item>
-        <item library="context-refresh.py">
-          <label>$ADDON[plugin.video.themoviedb.helper 32233]</label>
-          <visible>!String.IsEmpty(ListItem.Property(tmdbhelper.context.refresh))</visible>
-        </item>
-        <item library="context-artwork.py">
-          <label>$ADDON[plugin.video.themoviedb.helper 32222]</label>
-          <visible>!String.IsEmpty(ListItem.Property(tmdbhelper.context.artwork))</visible>
-        </item>
-        <item library="context-sorting.py">
-          <label>$ADDON[plugin.video.themoviedb.helper 32309]</label>
-          <visible>!String.IsEmpty(ListItem.Property(tmdbhelper.context.sorting))</visible>
-        </item>
-      </menu>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en_GB">TheMovieDb Helper - Now With Trakt Support!</summary>
-      <summary lang="es_ES">TheMovieDb Helper - ¡Ahora con soporte para Trakt!</summary>
-      <summary lang="fr_FR">TheMovieDb Helper - Maintenant avec support Trakt!</summary>
-      <description lang="en_GB">TheMovieDb Helper provides details about movies, tvshows and actors from TMDb. Users can access a variety of lists from TMDb and Trakt.</description>
-      <description lang="es_ES">TheMovieDb Helper proporciona detalles sobre películas, programas de televisión y actores de TMDb. Los usuarios pueden acceder a una variedad de listas desde TMDb y Trakt.</description>
-      <description lang="fr_FR">TheMovieDb Helper fournit des détails sur les films, les émissions de télévision et acteurs de TMDb. Les utilisateurs peuvent accéder à une variété de listes TMDb et Trakt.</description>
-      <disclaimer lang="en_GB">Provided by TheMovieDb and Trakt.</disclaimer>
-      <disclaimer lang="es_ES">Proporcionado por TheMovieDb y Trakt</disclaimer>
-      <disclaimer lang="fr_FR">Fourni par TheMovieDb et Trakt.</disclaimer>
-      <license>GPL-3.0-or-later</license>
-      <website>https://github.com/jurialmunkey/plugin.video.themoviedb.helper</website>
-      <forum>https://forum.kodi.tv/showthread.php?tid=345847</forum>
-      <assets>
-        <icon>icon.png</icon>
-        <fanart>fanart.jpg</fanart>
-        <screenshot>resources/screenshot-01.jpg</screenshot>
-        <screenshot>resources/screenshot-02.jpg</screenshot>
-      </assets>
-      <news>
-  - Improved PVR service matching
-  - Avoid unnecessary FanartTV re-requests
-  - Add In-Progress Episodes Trakt list
-  - Add Still to Watch Trakt list (In-Progress+Watchlist)
-  - Allow stacking of episodes from same show in calendar
-  - Fix collection matching and query encoding
-  - Better list filtering options
-  - Add cacheonly=true param for faster dialog widget loading
-  - Add script getter/setter functions for audio/subs in player
-  - Allow larger sync list items per page limits
-  - Fix plugincategory labels
-  - Fix randomised lists not refreshing
-  - Fix string formatter for update to Py3.7 in 19.3
-  - Fix fallback players when asserted value not available
-  - Allow both mark as watched/unwatched in Trakt options
-  - Update branding and icons
-  - Add temporary service pause for custom dialogs via Window.Property(TMDbHelper.ServicePause)
-  - Artwork monitor fixes
-</news>
     </extension>
   </addon>
 </addons>
